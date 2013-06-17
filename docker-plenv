@@ -1,0 +1,8 @@
+#!/bin/sh
+COMMAND="plenv $@"
+
+if [ "$DOCKER_PLENV_IMAGE" == '' ]; then
+  DOCKER_PLENV_IMAGE=miyagawa/plenv
+fi
+
+docker run $DOCKER_PLENV_IMAGE bash -c ". /root/.plenv.sh; $COMMAND"

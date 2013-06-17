@@ -1,0 +1,21 @@
+#!/bin/bash
+apt-get update
+apt-get install -y --force-yes build-essential curl git
+apt-get clean
+
+git clone git://github.com/tokuhirom/plenv.git /root/.plenv
+cat > /root/.plenv.sh <<'EOF'
+export PLENV_ROOT="/root/.plenv"
+export PATH="$PLENV_ROOT/bin:$PATH"
+eval "$(plenv init -)"
+EOF
+
+git clone git://github.com/tokuhirom/Perl-Build.git /root/.plenv/plugins/perl-build/
+
+# temp 6/16/2013 CPAN DNSSEC outage
+echo "207.171.7.177 www.cpan.org" >> /etc/hosts
+
+# Install stable versions only
+. /root/.plenv.sh
+xargs -L 1 plenv install < /build/perls.txt
+
