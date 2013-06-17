@@ -2,14 +2,6 @@
 
 Build file to build Docker image that has all Perls in its vanilla installed state.
 
-## Get
-
-Available from https://index.docker.io/u/miyagawa/plenv
-
-```
-> docker pull miyagawa/plenv
-```
-
 ## Build yourself
 
 You can customize the list of perls in `perls.txt`.
