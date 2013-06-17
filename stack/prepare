@@ -18,4 +18,3 @@ echo "207.171.7.177 www.cpan.org" >> /etc/hosts
 # Install stable versions only
 . /root/.plenv.sh
 xargs -L 1 plenv install < /build/perls.txt
-

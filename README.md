@@ -12,11 +12,11 @@ Available from https://index.docker.io/u/miyagawa/plenv
 
 ## Build yourself
 
+You can customize the list of perls in `stack/perls.txt`.
+
 ```
 > make build
 ```
-
-This will take about 2 hours to get all the perls built.
 
 Now you get an image called miyagawa/plenv with plenv setup for all available perls on CPAN under `/root/.plenv`.
 
