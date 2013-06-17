@@ -1,0 +1,10 @@
+#!/bin/sh
+VERSION="$1"
+shift
+MODULES="$@"
+
+if [ -z "$DOCKER_PLENV_IMAGE" ]; then
+  DOCKER_PLENV_IMAGE=miyagawa/plenv
+fi
+
+docker run -e PLENV_VERSION=$VERSION $DOCKER_PLENV_IMAGE bash -c ". /root/.plenv.sh; plenv install-cpanm; cpanm $MODULES"
