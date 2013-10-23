@@ -14,10 +14,10 @@ Now you get an image called miyagawa/plenv with plenv setup for all available pe
 
 ## Test CPAN modules with Vanilla perl
 
-Setup scripts for shell is located in `/root/.plenv.sh` and you have to source it before running the plenv command and shims.
+Setup scripts for shell is located in `/etc/profile.d/plenv.sh` and you have to source it before running the plenv command and shims.
 
 ```
-docker run miyagawa/plenv -e PLENV_VERSION=5.18.0 bash -c ". /root/.plenv.sh; plenv install-cpanm; cpanm Module"
+docker run -e PLENV_VERSION=5.18.0 miyagawa/plenv bash -c ". /etc/profile.d/plenv.sh; plenv install-cpanm; cpanm Module"
 ```
 
 ## Author
